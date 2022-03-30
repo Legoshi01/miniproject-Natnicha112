@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "153503235523",
+    "project_id": "cute-calories-39c35",
+    "storage_bucket": "cute-calories-39c35.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153503235523:android:bb32b550d1638611e9d176",
+        "android_client_info": {
+          "package_name": "com.example.cutecalories"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "153503235523-jkq5flfq6d6gfinhjdlc494ta6h3b2pe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cutecalories",
+            "certificate_hash": "bcd5ed59c13574668f93a2b5a6f7f8352def2354"
+          }
+        },
+        {
+          "client_id": "153503235523-bqemplpa3leh3v0ddfum8bj9vb13sobd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3s4U1zTT4WuUIaPVGUe6c5d03dtlP4SY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "153503235523-bqemplpa3leh3v0ddfum8bj9vb13sobd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
