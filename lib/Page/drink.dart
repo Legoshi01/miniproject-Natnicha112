@@ -2,14 +2,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class dessert extends StatefulWidget {
-  const dessert({Key? key}) : super(key: key);
+class drink extends StatefulWidget {
+  const drink({Key? key}) : super(key: key);
 
   @override
-  State<dessert> createState() => _dessertState();
+  State<drink> createState() => _drinkState();
 }
 
-class _dessertState extends State<dessert> {
+class _drinkState extends State<drink> {
   CollectionReference menu = FirebaseFirestore.instance.collection('Menu');
   final user = FirebaseAuth.instance.currentUser!;
   final TextEditingController _name = TextEditingController();
@@ -20,7 +20,7 @@ class _dessertState extends State<dessert> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 251, 204, 194),
       appBar: AppBar(
-        title: const Text('ของหวาน'),
+        title: const Text('เครื่องดื่ม'),
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios),
@@ -44,7 +44,7 @@ class _dessertState extends State<dessert> {
                       child: Padding(
                         padding: const EdgeInsets.all(10),
                         child: Expanded(
-                          child: Image.asset("images/e1.jpg"),
+                          child: Image.asset("images/d1.jpg"),
                           flex: 2,
                         ),
                       ),
@@ -57,8 +57,8 @@ class _dessertState extends State<dessert> {
                             const Expanded(
                               flex: 5,
                               child: ListTile(
-                                title: Text("ลอดช่อง"),
-                                subtitle: Text("133 แคลอรี่"),
+                                title: Text("นมเย็น"),
+                                subtitle: Text("425 แคลอรี่"),
                               ),
                             ),
                             Expanded(
@@ -75,17 +75,17 @@ class _dessertState extends State<dessert> {
                                       FirebaseFirestore.instance
                                           .collection("Menu")
                                           .add({
-                                        'name': 'ลอดช่อง',
-                                        'calorie': '133 แคลอรี่',
+                                        'name': 'เย็นนม',
+                                        'calorie': '425 แคลอรี่',
                                         'uid': user.uid,
                                       });
                                       showDialog<String>(
                                         context: context,
                                         builder: (BuildContext context) =>
                                             AlertDialog(
-                                          title: const Text('ของหวาน'),
+                                          title: const Text('เครื่องดื่ม'),
                                           content: const Text(
-                                              'เพิ่มของหวานเรียบร้อยเเล้ว'),
+                                              'เพิ่มเครื่องดื่มเรียบร้อยเเล้ว'),
                                           actions: <Widget>[
                                             TextButton(
                                               onPressed: () =>
@@ -124,7 +124,7 @@ class _dessertState extends State<dessert> {
                       child: Padding(
                         padding: const EdgeInsets.all(10),
                         child: Expanded(
-                          child: Image.asset("images/e2.jpg"),
+                          child: Image.asset("images/d2.png"),
                           flex: 2,
                         ),
                       ),
@@ -137,8 +137,8 @@ class _dessertState extends State<dessert> {
                             const Expanded(
                               flex: 5,
                               child: ListTile(
-                                title: Text("สตรอเบอร์รี่ชีสเค้ก"),
-                                subtitle: Text("200 แคลอรี่"),
+                                title: Text("ชานมไข่มุก "),
+                                subtitle: Text("360 แคลอรี่"),
                               ),
                             ),
                             Expanded(
@@ -155,17 +155,17 @@ class _dessertState extends State<dessert> {
                                       FirebaseFirestore.instance
                                           .collection("Menu")
                                           .add({
-                                        'name': 'สตรอเบอร์รี่ชีสเค้ก',
-                                        'calorie': '200 แคลอรี่',
+                                        'name': 'ชานมไข่มุก ',
+                                        'calorie': '360 แคลอรี่',
                                         'uid': user.uid,
                                       });
                                       showDialog<String>(
                                         context: context,
                                         builder: (BuildContext context) =>
                                             AlertDialog(
-                                          title: const Text('ของหวาน'),
+                                          title: const Text('เครื่องดื่ม'),
                                           content: const Text(
-                                              'เพิ่มของหวานเรียบร้อยเเล้ว'),
+                                              'เพิ่มเครื่องดื่มเรียบร้อยเเล้ว'),
                                           actions: <Widget>[
                                             TextButton(
                                               onPressed: () =>
@@ -204,7 +204,7 @@ class _dessertState extends State<dessert> {
                       child: Padding(
                         padding: const EdgeInsets.all(10),
                         child: Expanded(
-                          child: Image.asset("images/e3.jpg"),
+                          child: Image.asset("images/d3.jpg"),
                           flex: 2,
                         ),
                       ),
@@ -217,8 +217,8 @@ class _dessertState extends State<dessert> {
                             const Expanded(
                               flex: 5,
                               child: ListTile(
-                                title: Text("ไอศกรีมช็อคโกแลต"),
-                                subtitle: Text("300 แคลอรี่"),
+                                title: Text("โกโก้เย็น"),
+                                subtitle: Text("335 แคลอรี่"),
                               ),
                             ),
                             Expanded(
@@ -235,17 +235,17 @@ class _dessertState extends State<dessert> {
                                       FirebaseFirestore.instance
                                           .collection("Menu")
                                           .add({
-                                        'name': 'ไอศกรีมช็อคโกแลต',
-                                        'calorie': '300 แคลอรี่',
+                                        'name': 'โกโก้เย็น',
+                                        'calorie': '335 แคลอรี่',
                                         'uid': user.uid,
                                       });
                                       showDialog<String>(
                                         context: context,
                                         builder: (BuildContext context) =>
                                             AlertDialog(
-                                          title: const Text('ของหวาน'),
+                                          title: const Text('เครื่องดื่ม'),
                                           content: const Text(
-                                              'เพิ่มของหวานเรียบร้อยเเล้ว'),
+                                              'เพิ่มเครื่องดื่มเรียบร้อยเเล้ว'),
                                           actions: <Widget>[
                                             TextButton(
                                               onPressed: () =>

@@ -17,19 +17,19 @@ Future<UserCredential?> registerUser(
     CollectionReference users = FirebaseFirestore.instance.collection('Users');
 
     users
-        .add({
+        // .add({
+        //   'name': name,
+        //   'weight': weight,
+        //   'height': height,
+        //   'uid_id': userCredential.user!.uid,
+        // })
+        .doc(userCredential.user!.uid)
+        .set({
           'name': name,
           'weight': weight,
           'height': height,
           'uid_id': userCredential.user!.uid,
         })
-        // .doc(userCredential.user!.uid)
-        // .set({
-        //   'name': name,
-        //   'weight': weight,
-        //   'height': height,
-        //   'uid_id': users,
-        // })
         .then((value) => print("User Added"))
         .catchError((error) => print("Failed to add user: $error"));
     return userCredential;

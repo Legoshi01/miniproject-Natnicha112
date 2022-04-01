@@ -1,12 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cutecalories/Page/drink.dart';
+import 'package:cutecalories/Page/fruit.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../AuthService.dart';
 import 'ItemCalories.dart';
 import 'LoginPage.dart';
 import 'dessert.dart';
-import 'link.dart';
 import 'profile.dart';
+import 'savoryfood.dart';
 
 // import 'add_product.dart';
 // import 'edit_product_page.dart';
@@ -41,7 +43,13 @@ class _HomePageState extends State<HomePage> {
             Card(
               margin: const EdgeInsets.all(8.0),
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const savoryfood(),
+                      )).then((value) => setState(() {}));
+                },
                 splashColor: Colors.deepOrangeAccent,
                 child: Center(
                   child: Column(
@@ -65,11 +73,11 @@ class _HomePageState extends State<HomePage> {
               margin: const EdgeInsets.all(8.0),
               child: InkWell(
                 onTap: () {
-                  // Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //       builder: (context) => const dessert(),
-                  //     )).then((value) => setState(() {}));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const dessert(),
+                      )).then((value) => setState(() {}));
                 },
                 splashColor: Colors.deepOrangeAccent,
                 child: Center(
@@ -97,7 +105,7 @@ class _HomePageState extends State<HomePage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const dessert(),
+                        builder: (context) => const drink(),
                       )).then((value) => setState(() {}));
                 },
                 splashColor: Colors.deepOrangeAccent,
@@ -122,7 +130,13 @@ class _HomePageState extends State<HomePage> {
             Card(
               margin: const EdgeInsets.all(8.0),
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const fruit(),
+                      )).then((value) => setState(() {}));
+                },
                 splashColor: Colors.deepOrangeAccent,
                 child: Center(
                   child: Column(

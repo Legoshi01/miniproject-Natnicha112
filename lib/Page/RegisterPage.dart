@@ -39,7 +39,7 @@ class _RegisterPageState extends State<RegisterPage> {
               TextFormField(
                 controller: _username,
                 decoration: const InputDecoration(
-                  icon: const Icon(Icons.person),
+                  icon: Icon(Icons.person),
                   hintText: 'Enter your name',
                   labelText: 'Username',
                 ),
@@ -47,7 +47,7 @@ class _RegisterPageState extends State<RegisterPage> {
               TextFormField(
                 controller: _weight,
                 decoration: const InputDecoration(
-                  icon: const Icon(Icons.line_weight),
+                  icon: Icon(Icons.line_weight),
                   hintText: 'Enter your Weight',
                   labelText: 'Weight',
                 ),
@@ -55,7 +55,7 @@ class _RegisterPageState extends State<RegisterPage> {
               TextFormField(
                 controller: _height,
                 decoration: const InputDecoration(
-                  icon: const Icon(Icons.height),
+                  icon: Icon(Icons.height),
                   hintText: 'Enter your Height',
                   labelText: 'Height',
                 ),
@@ -63,7 +63,7 @@ class _RegisterPageState extends State<RegisterPage> {
               TextFormField(
                 controller: _email,
                 decoration: const InputDecoration(
-                  icon: const Icon(Icons.email),
+                  icon: Icon(Icons.email),
                   hintText: 'Enter your Email',
                   labelText: 'Email',
                 ),
@@ -71,7 +71,7 @@ class _RegisterPageState extends State<RegisterPage> {
               TextFormField(
                 controller: _password,
                 decoration: const InputDecoration(
-                  icon: const Icon(Icons.password),
+                  icon: Icon(Icons.password),
                   hintText: 'Enter your password',
                   labelText: 'Password',
                 ),
@@ -91,10 +91,50 @@ class _RegisterPageState extends State<RegisterPage> {
                                 if (value != null)
                                   {
                                     print('add complete'),
-                                    Navigator.pop(context)
+                                    Navigator.pop(context),
+                                    showDialog<String>(
+                                      context: context,
+                                      builder: (BuildContext context) =>
+                                          AlertDialog(
+                                        title: const Text('Register'),
+                                        content: const Text(
+                                            'สมัครสมาชิกเรียบร้อยเเล้ว'),
+                                        actions: <Widget>[
+                                          TextButton(
+                                            onPressed: () =>
+                                                Navigator.pop(context, 'OK'),
+                                            child: const Text('OK'),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 8,
+                                    ),
                                   }
                                 else
-                                  {print('error')}
+                                  {
+                                    print('error'),
+                                    showDialog<String>(
+                                      context: context,
+                                      builder: (BuildContext context) =>
+                                          AlertDialog(
+                                        title: const Text('Register Error'),
+                                        content: const Text(
+                                            'กรุณากรอกข้อมูลให้ถูกต้องหรือครบถ้วน'),
+                                        actions: <Widget>[
+                                          TextButton(
+                                            onPressed: () =>
+                                                Navigator.pop(context, 'OK'),
+                                            child: const Text('OK'),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 8,
+                                    ),
+                                  },
                               });
                     },
                   )),
